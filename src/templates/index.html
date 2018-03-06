@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Miri</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('asset', path='css/style.css')}}"></head>
+<body>
+
+{% for contr in contributions %}
+<h2>{{ contr.title }} <small>- {{ contr.contributor }}</small></h2>
+{{contr.map_location}}
+{{contr.shown_location}}
+<p>{{ contr.description}}</p>
+{% for img in contr.images %}
+<div>
+    <img src="{{ url_for('image', img_id=img.id) }}" alt="{{ img.title }}">
+    {{img.title}} - {{ img.description }}
+</div>
+{% endfor %}
+{% endfor %}
+<script src="{{ url_for('asset', path='js/main.js') }}"></script>
+</body>

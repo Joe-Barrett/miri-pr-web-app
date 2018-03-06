@@ -1,0 +1,6 @@
+.idea
+.python-version
+*/**.pyc
+data
+src/config.py
+src/__pycache__

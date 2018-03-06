@@ -1,0 +1,38 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+<form action="{{endpoint}}" method="POST">
+    <label>Title</label>
+    <input type="text" name="title"{% if contribution %} value="{{contribution.title}}"{% endif %}>
+    <label>Description</label>
+    <textarea name="description">{% if contribution %}{{contribution.description}}{% endif %}</textarea>
+    <label>Displayed location</label>
+    <input type="text" name="shown_location"{% if contribution %} value="{{contribution.shown_location}}"{% endif %}>
+    <label>Map location</label>
+    <select name="map_location">
+        <option value=""></option>
+        {% for country in map_countries %}
+        <option value="{{country}}"{% if contribution and contribution.map_location == country %} selected="selected"{% endif %}>{{country}}</option>
+        {% endfor %}
+    </select>
+    <label>Contributor</label>
+    <input type="text" name="contributor"{% if contribution %} value="{{contribution.contributor}}"{% endif %}>
+    <button type="submit">Submit</button>
+</form>
+
+{% if contribution and contribution.id %}
+<form action="{{ url_for('contribution_delete', contr_id=contribution.id) }}" method="POST">
+    <button type="submit">Delete</button>
+</form>
+{% endif %}
+
+{% if contribution and contribution.id %}
+{% for image in contribution.images %}
+{% with endpoint=url_for('image_edit', img_id=image.id) %}
+    {% include 'admin/image_form.html' with context %}
+{% endwith %}
+{% endfor %}
+{% with endpoint=url_for('image_new', contr_id=contribution.id) %}
+    {% include 'admin/image_form.html'%}
+{% endwith %}
+{% endif %}
+{% endblock %}

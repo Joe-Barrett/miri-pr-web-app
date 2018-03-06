@@ -1,0 +1,14 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+<a href="{{ url_for('contribution_new') }}">Add a contribution</a>
+{% for contr in contributions %}
+<h2><a href="{{ url_for('contribution_edit', contr_id=contr.id) }}">{{ contr.title }}</a> <small>- {{ contr.contributor }}</small></h2>
+<p>{{ contr.description}}</p>
+    {% for img in contr.images %}
+    <div>
+        <img src="/img/{{ img.id }}" alt="{{ img.title }}">
+        {{img.title}} - {{ img.description }}
+    </div>
+    {% endfor %}
+{% endfor %}
+{% endblock %}
