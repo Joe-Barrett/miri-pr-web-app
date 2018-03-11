@@ -6,7 +6,9 @@
     <title>Map Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+
+	<!-- Bootstrap -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <style>
 	body {
@@ -15,6 +17,12 @@
 		display: flex;
 		overflow: hidden;
 		background-color: #7FC8ED;
+	}
+	h1 {
+		font-family: "Raleway";
+		font-style: 600;
+		color: #1A1A1A;
+
 	}
 	svg {
 		width: 90vw;
@@ -30,13 +38,65 @@
 	path:hover {
 		fill: #34495E;
 	}
+	/* Logo*/
+	.logo span {
+	  color: white;
+	  text-decoration: none;
+	  text-align: center;
+	  display: block;
+	}
 	
+	.logo, .logo-span {
+	  transition: 0.3s;
+	  z-index: 100;
+	}
+	
+	.logo {
+	  height: 70px;
+	  font: normal normal 700  28px/70px Century Gothic,sans-serif;
+	  overflow: hidden;
+	  width: 155px;
+	  background-color: #34495E;
+	  opacity: 0.9;
+	}
+	
+	.logo-span{
+	  margin-top: 0em;   
+	}
+	
+	.logo:hover .logo-span{
+	  margin-top: -2.6em;
+	}
+		  
+	/* Responsive Logo*/  
+	@media only screen and (max-width:500px) {
+	  /* For mobile phones: */
+	
+	.logo {
+	  width: 112%;
+	}
+		
+	}  
+	  
   </style>  
-  <h1>MIRI</h1>
+  
   </head>
   <body>
+  
   <div id='map'>
-	<svg viewBox="0 0 1009 652">
+   
+    <!-- MIRI Logo Start -->
+	<div class="logo">
+ 	 <span class="logo-span">
+    	MIRI
+  	</span>
+  	<span>
+   	 HOME
+  	</span>
+	</div>
+	<!--- MIRI Logo End--->
+	
+		<svg viewBox="0 0 1009 652">
 		<g transform = "scale(3) translate(-400,-160)">
 			<path class="countryImage" id="Belgium" d="M484.55,295.91L486.6,296.26L489.2,295.33L490.97,297.28L492.52,298.32L492.2,301.29L491.47,301.45L491.16,303.88L488.71,301.91L487.27,302.25L485.31,300.19L484.01,298.42L482.71,298.35L482.3,296.79z"></path>
 			<path class="countryImage" id="Bulgaria" d="M538.78,325.56L539.59,327.16L540.67,326.87L542.83,327.48L546.95,327.68L548.34,326.69L551.64,325.79L553.68,327.2L555.33,327.61L553.87,329.2L552.85,331.93L553.75,334.09L551.34,333.58L548.48,334.76L548.45,336.62L545.9,336.97L543.93,335.67L541.68,336.7L539.61,336.59L539.41,334.12L538,332.91L538.47,332.37L538.16,331.92L538.63,330.71L539.7,329.52L538.34,327.86L538.09,326.44z"></path>
