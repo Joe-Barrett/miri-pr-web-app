@@ -23,7 +23,7 @@ flask initdb
 7. Run the flask development server:
 ```flask run```
 
-The server should be running on `http://localhost:5000`.
+The server should be running on `http://localhost:8000`.
 After the first time, only the last step is required (apart from making sure the database is running).
 
 *There is an easier way if you are on a unix machine and have docker installed:*
@@ -38,5 +38,5 @@ docker-compose up
 docker-compose run app flask initdb
 ```
 
-The server should be running on `http://localhost:5000`.
+The server should be running on `http://localhost:8000`.
 After the first time, only step 2. is required.
