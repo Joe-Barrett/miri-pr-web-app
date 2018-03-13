@@ -6,24 +6,23 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('asset', path='css/style.css')}}">
 </head>
 
-<div id="active" style="float:right; width: 30%"></div>
 
 {% for contr in contributions %}
-<div id="{{ contr.id}}" style="display: none;">
-<h2>{{ contr.title }}
-    <small>- {{ contr.contributor }}</small>
-</h2>
-{{contr.map_location}}
-{{contr.shown_location}}
-<p>{{ contr.description}}</p>
-{% for img in contr.images %}
-<div>
-    <img src="{{ url_for('image', img_id=img.id) }}" alt="{{ img.title }}">
-    {{img.title}} - {{ img.description }}
-</div>
-{% endfor %}
+<div id="{{ contr.id}}">
+    <h2>{{ contr.title }}
+        <small>- {{ contr.contributor }}</small>
+    </h2>
+    {{contr.map_location}}
+    {{contr.shown_location}}
+    <p>{{ contr.description}}</p>
+    {% for img in contr.images %}
+    <div>
+        <img src="{{ url_for('image', img_id=img.id) }}" alt="{{ img.title }}">
+        {{img.title}} - {{ img.description }}
+    </div>
+    {% endfor %}
 </div>
 {% endfor %}
 <script src="{{ url_for('asset', path='js/main.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
+</html>
