@@ -1,11 +1,69 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>Miri</title>
-    <meta charset="utf-8">
+<head>    
+	<title>MIRI</title>
+  <meta charset="utf-8">
+	
+	<!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:300,600"/>
+	<!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('asset', path='css/style.css')}}">
+	<!-- Font Awsome Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+	
+	
 </head>
+
 <body>
+
+<div class="col-md-4 side">
+	<button class="btn btn-primary resp">
+		<a href="{{ url_for('index') }}"><i class="fas fa-home"></i> MIRI Site</a>	
+	</button>
+	<div class="sideHeader">
+		<h3>MIRI</h3>
+		<p>ADMIN</p>
+	</div>
+	<hr>
+	<!-- SideBar Menu Begins-->
+  <div id="MainMenu">
+ 
+	<button class="btn btn-primary desk">
+		<a href="{{ url_for('index') }}"><i class="fas fa-home"></i> MIRI Site</a>	
+	</button>
+		
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" data-parent="#MainMenu" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fas fa-file"></i> Contributors
+  </button>
+	<div class="collapse" id="collapseExample">
+  	<div class="contributors">
+    	{% for contr in contributions %}
+				<p><a href="{{ url_for('contribution_edit', contr_id=contr.id) }}">{{ contr.contributor }} - {{ contr.title }}</a></p>
+			{% endfor %}
+  	</div>
+	</div>
+	
+	<button class="btn btn-primary">
+		<a href="{{ url_for('contribution_new') }}"><i class="fas fa-plus"></i> Add New Contributor</a>   
+	</button>
+	
+	<button class="btn btn-primary">
+		<a href="#"><i class="fas fa-cog"></i> Settings</a>   
+	</button>
+		
+  </div>
+	<!-- SideBar Menu Ends-->
+</div>
+	
+<div class="col-md-8 mainbody">	
 {% block body %}
 
 {% endblock %}
+</div>	
+	
 </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
