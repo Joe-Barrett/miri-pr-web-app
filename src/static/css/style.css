@@ -110,7 +110,7 @@
 		
 	hr{
 		border-width: 1px !important;
-		border-color: #1A1A1A !important;
+		border-color: #EEEEEE !important;
 	}
 
 	section{
@@ -122,6 +122,151 @@
 	  
 /* ---------- */
 
+/* Backend Admin */
 
+	/* Admin Sidebar */
+
+		.col-md-4.side{
+			height: 100vh;
+			background-color: #34495E;
+			color: #FFFFFF;
+		}
+
+		.sideHeader h3, .sideHeader p{
+			text-align: center;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.sideHeader h3{
+			font-weight: bold;
+		}
+
+		.btn-primary.resp{
+			display: none;
+		}
+
+		.btn-primary a, .btn-primary, .btn-primary:hover{
+			color: #FFFFFF;
+			text-decoration: none;
+			width: 100%;
+			text-align: left;
+			background-color: #34495E;
+			border: none;
+		}
+
+		.btn-primary.focus, .btn-primary:focus {
+    	background-color: #34495E;
+    	border: none;
+		}
+	
+		.btn:focus{
+			outline:0;
+		}
+
+		.contributors a{
+			color: #FFFFFF;
+			margin: 5%;
+			text-decoration: none;
+			line-height: 25px;
+		}
+
+		svg.svg-inline--fa{
+					margin-right: 1%;
+					color: #FFFFFF;
+		}
+		
+			/* Responsive Admin Sidebar*/  
+
+			@media only screen and (max-width:991px) {
+				.col-md-4.side{
+					height: auto;
+					padding-bottom: 2%;
+				}
+				
+				.btn-primary.resp{
+					display: block;
+					width: 10%;
+					float: left;
+				}
+				
+				.btn-primary.desk{
+					display: none;
+				}
+				
+				.sideHeader h3{
+					width: 90%;
+					margin-top: 0;
+					padding-top: 2%;
+				}
+				
+			} 
+
+			/* ----------- */
+
+		/* ---------- */
+
+		/* Admin Main Body */
+
+		.col-md-8.mainbody{
+			height: 100vh;
+			background-color: #EEEEEE;
+			color: #1A1A1A;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 300 !important;
+		}
+
+		.main h3{
+			margin-left: 5%;
+			font-weight: 600;
+		}
+
+		.main form{
+			margin: 5%;
+		}
+
+		.mainbody label, .mainbody input, .mainbody textarea, .mainbody select{
+			width: 100%;
+			font-weight: 300 !important;
+		}
+
+		.mainbody input, .mainbody textarea, .mainbody select{
+			margin-bottom: 5%;
+		}
+
+		.mainbody input, .mainbody select{
+			height: 30px;
+		}
+
+		.mainbody textarea{
+			height: 200px;
+		}
+
+		.mainbody button{
+			background-color: #34495E;
+			color: #FFFFFF;
+			width: 20%;
+			height: 30px;
+			float: left;
+		}
+
+		/* --------- */
+
+			/* Responsive Admin Main Body*/  
+
+			@media only screen and (max-width:991px) {
+				.col-md-4.mainbody{
+					height: auto;
+				}
+				
+				.mainbody h3{
+					margin-top: 0;
+					padding-top: 2%;
+				}
+				
+			} 
+
+			/* ----------- */
+
+/* ---------- */
 	  
 	
