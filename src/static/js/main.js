@@ -12,7 +12,7 @@ $(document).ready(function () {
 			$(`#contributions .contribution[data-country="${country}"] .details`).show();
 		} else {
 			$('#contributions .details').hide();
-			$('#contributions .contribution').show();
+			$('#contributions .contribution').hide();
 		}
 
 		$('.countryImage').css({
