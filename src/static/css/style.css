@@ -237,16 +237,11 @@ p.location {
 	}
 }
 
-/* ---------- */
-
-ß
-/* ---------- */
-
 /* Backend Admin */
 
 /* Admin Sidebar */
 
-.col-md-4.side {
+.side {
 	height: 100vh !important;
 	background-color: #34495E !important;
 	color: #FFFFFF !important;
