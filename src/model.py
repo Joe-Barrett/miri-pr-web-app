@@ -5,7 +5,6 @@ from main import db
 class BaseModel(Model):
     id = PrimaryKeyField()
     title = CharField(null=True)
-    description = TextField(null=True)
 
     class Meta:
         database = db
@@ -15,6 +14,7 @@ class Contribution(BaseModel):
     map_location = CharField(null=True)
     shown_location = CharField(null=True)
     contributor = CharField(null=True)
+    description = TextField(null=True)
 
 
 class Image(BaseModel):
@@ -75,4 +75,5 @@ COUNTRIES = [
     'Ukraine',
     'United Kingdom (UK)',
     'Vatican City (Holy See)',
+		'USA'
 ]
