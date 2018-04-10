@@ -1,0 +1,424 @@
+/* Frontend */
+
+	#wrapper {
+		margin: 0;
+		height: 100vh;
+		display: flex;
+		overflow: hidden;
+		background-color: #7FC8ED;
+	} 
+	
+/* Interactive Map */
+	
+	.col-md-8.main{
+		padding: 0;
+	}
+		
+	svg {
+		width: 90vw;
+		height: 90vh;
+	}
+	  
+	path {
+		fill: #FFFFFF;
+		cursor: pointer;
+		stroke: grey;
+		stroke-width: 0.1;
+	}
+	  
+	path:hover {
+		fill: #34495E;
+	}
+
+	  
+/* ---------- */
+	  
+/* Logo*/
+	  
+	.logo h1 {
+		font-family: "Raleway";
+		font-style: 600;
+	}
+	  
+	.logo span {
+	  color: white;
+	  text-decoration: none;
+	  text-align: center;
+	  display: block;
+	}
+	
+	.logo, .logo-span {
+	  transition: 0.3s;
+	  z-index: 100;
+	}
+	
+	.logo {
+	  height: 70px;
+	  font: normal normal 700  28px/70px Century Gothic,sans-serif;
+	  overflow: hidden;
+	  width: 155px;
+	  background-color: #34495E;
+	  opacity: 0.9;
+	}
+	
+	.logo-span{
+	  margin-top: 0em;   
+	}
+	
+	.logo:hover .logo-span{
+	  margin-top: -2.2em;
+	}
+	
+/* Responsive Logo*/  
+	  
+	@media only screen and (max-width:991px) {
+	  .logo {
+	    width: 112%;
+	  }	
+	} 
+
+/* ----------- */
+	  
+/* Contributors Sidebar */
+	  
+	.col-md-4.sidebar{
+		background-color: rgba(255,255,255, 0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+		height: auto;
+		overflow: scroll;
+		
+	}
+
+	.wrap {
+      min-height: 100%;
+      position: relative;
+    }
+	
+	.container{
+		height: 100%;
+		width: 100% !important;
+		color: #000000;
+		font-family: 'Raleway';
+		padding: 0;
+	}
+
+		/* Sidebar Header */
+
+		.svg-inline--fa.fa-arrow-circle-left{
+			font-size: 30px;
+			width: 10%;
+			margin-top: 5%;
+			float: left;
+		}
+
+		.svg-inline--fa.fa-arrow-circle-left path{
+			fill: #000000;
+		}
+
+		.container h3{
+			text-align: center;
+			font-weight: bold;
+			width: 80%;
+			float: left;
+			padding-top: 10px;
+			margin-bottom: 5%;
+		}
+
+		.sidebar hr{
+			border-top: 1px solid #000000 !important;
+			width: 100%;
+		}
+		
+		/* ---------- */
+
+		/* Contributors Information */
+
+		section{
+			height: auto;
+		}
+
+		#contributors div{
+			display: inline-block;
+			margin: 2% 0 2% 0;
+			border: solid 1px #FFFFFF;
+			background-color: #FFFFFF;
+		}
+
+		#contributors h4{
+			margin-bottom: 0%;
+			padding-top: 2%;
+		}
+
+		#contributors h4, #contributors h5, p.location{
+			text-align: center;
+			width: 75%;
+			float: left;
+			margin-left: 2%;
+		}
+
+		.flags img{
+			height: 20%;
+			width: 20%;
+			float: left;
+		}
+
+		div.description{
+			display: none;
+			float: left;
+			text-align: justify;
+			margin: 2% !important;
+			box-shadow: none !important;
+		}
+
+		.svg-inline--fa.fa-angle-left, .svg-inline--fa.fa-angle-right{
+			font-size: 30px;
+		}
+
+		.svg-inline--fa.fa-angle-left path, .svg-inline--fa.fa-angle-right path{
+			fill: #000000;
+		}
+
+		.parts img{
+			margin: 0;
+			display: none;
+		}
+
+		/* ---------- */
+
+			/* Responsive Contributors Sidebar */
+
+			@media only screen and (max-width:991px) {
+				.col-md-4.sidebar{
+					top: 70px;
+				}
+				
+				.col-md-4.sidebar #button{
+					display: none;
+				}
+			} 
+
+			/* ---------- */ß
+	  
+/* ---------- */
+
+/* Backend Admin */
+
+	/* Admin Sidebar */
+
+		.col-md-4.side{
+			height: 100vh !important;
+			background-color: #34495E !important;
+			color: #FFFFFF !important;
+		}
+
+		.sideHeader h3, .sideHeader p{
+			text-align: center;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		hr{
+			border-width: 1px !important;
+			border-color: #EEEEEE !important;
+		}
+
+		.sideHeader h3{
+			font-weight: bold;
+		}
+
+		.btn-primary.resp{
+			display: none;
+		}
+
+		.btn-primary a, .btn-primary, .btn-primary:hover{
+			color: #FFFFFF;
+			text-decoration: none;
+			width: 100%;
+			text-align: left;
+			background-color: #34495E;
+			border: none;
+		}
+
+		.btn-primary.focus, .btn-primary:focus {
+    	background-color: #34495E;
+    	border: none;
+		}
+	
+		.btn:focus{
+			outline:0;
+		}
+
+		.contributors a{
+			color: #FFFFFF;
+			margin: 5%;
+			text-decoration: none;
+			line-height: 25px;
+		}
+
+		svg.svg-inline--fa{
+					margin-right: 1%;
+					color: #FFFFFF;
+		}
+		
+			/* Responsive Admin Sidebar*/  
+
+			@media only screen and (max-width:991px) {
+				.col-md-4.side{
+					padding-bottom: 2%;
+					height: auto;
+				}
+				
+				.btn-primary.resp{
+					display: block;
+					width: 10%;
+					float: left;
+				}
+				
+				.btn-primary.desk{
+					display: none;
+				}
+				
+				.sideHeader h3{
+					width: 90%;
+					margin-top: 0;
+					padding-top: 2%;
+				}
+				
+				.btn-primary.contr, .btn-primary.add_contr{
+					width: 50%;
+					float: left;
+					text-align: center;
+				}
+								
+			} 
+
+			/* ----------- */
+
+		/* ---------- */
+
+		/* Admin Main Body */
+
+		.col-md-8.mainbody{
+			height: 100vh;
+			overflow: scroll;
+			background-color: #EEEEEE;
+			color: #1A1A1A;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 300 !important;
+			padding-bottom: 2%;
+		}
+
+		.main h3{
+			margin-left: 5%;
+			font-weight: 600;
+		}
+
+			/* Add Contributor */
+
+			.main form{
+				margin: 5%;
+			}
+
+			.mainbody label, .mainbody input, .mainbody textarea, .mainbody select{
+				width: 100%;
+				font-weight: 300 !important;
+			}
+
+			.mainbody input, .mainbody select{
+				margin-bottom: 2%;
+			}
+
+			.mainbody textarea{
+				margin-bottom: 1%;
+			}
+
+			.mainbody input, .mainbody select{
+				height: 30px;
+			}
+
+			.mainbody textarea{
+				height: 200px;
+			}
+
+			.mainbody button{
+				background-color: #34495E;
+				color: #FFFFFF;
+				width: 20%;
+				height: 30px;
+				float: left;
+			}
+
+			input.file {
+				padding-top: 1%;
+			}
+		
+			/* ---------- */
+
+			/* Add/Delete Img To Contributor */
+
+			form.addImg{
+				width: 100%;
+				float: left;
+				margin-top: 2%;
+			}
+
+			.addImg img{
+				width: 25%;
+				float: left;
+			}
+
+			.addImg label{
+				width: auto;
+				padding-top: 0.5%;
+				margin: 0 1%;
+				float: left;
+			}
+
+			.addImg input{
+				width: 50%;
+				float: left;
+			}
+
+			input.upload{
+				width: 25%;
+			}
+
+			.addImg button{
+				margin-left: 5%;
+			}
+
+			form.delImg{
+				float: left;
+				width: 100%;
+				margin: 2%;
+			}
+
+			.delImg button{
+					margin-left: 28%;
+			}
+
+			/* ---------- */
+
+		/* --------- */
+
+			/* Responsive Admin Main Body*/  
+
+			@media only screen and (max-width:991px) {
+				.col-md-4.mainbody{
+					height: auto;
+				}
+				
+				.mainbody h3{
+					margin-top: 0;
+					padding-top: 2%;
+				}
+				
+			} 
+
+			/* ----------- */
+
+/* ---------- */
+	  
+	
