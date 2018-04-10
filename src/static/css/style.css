@@ -140,12 +140,12 @@
 			height: auto;
 		}
 
-		/* #contributors div{
+		.contributions{
 			display: inline-block;
 			margin: 2% 0 2% 0;
 			border: solid 1px #FFFFFF;
 			background-color: #FFFFFF;
-		} */
+		}
 
 		#contributors h4{
 			margin-bottom: 0%;
@@ -186,6 +186,41 @@
 			display: none;
 		}
 
+		/* ---------- */
+
+		/* Carousel */
+	
+		.carousel-inner img{
+	    margin: auto;
+		}
+
+		.carousel-caption{
+			width: 100%;
+			height: 50px;
+			padding: 0;
+			background-color: black;
+			left: 0 !important;
+			bottom: auto !important;
+		}
+
+		.carousel-caption h4{
+			color: #FFFFFF;
+			width: 100% !important;
+			margin: 0;
+			padding: 0 !important;
+			text-shadow: none;
+		}
+
+		.carousel-control{
+	   	color: #34495E !important;
+    	background-color: rgba(255, 255, 255, 0.2) !important;
+			background-image: none !important;
+    	opacity: 1 !important;
+    	width: 10% !important;
+		}
+
+		
+		
 		/* ---------- */
 
 			/* Responsive Contributors Sidebar */

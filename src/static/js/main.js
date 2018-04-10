@@ -4,7 +4,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$('#contributors').children().each(function() {
+	$('.contributions').children().each(function() {
 		var country = $(this).attr('id');
 		var flag = '../static/imgs/'+ country +'.jpg';
 
