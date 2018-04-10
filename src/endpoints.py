@@ -17,9 +17,7 @@ def asset(path):
 
 @app.route('/admin', methods=['GET'])
 def admin():
-    contributions = model.Contribution.select().order_by(model.Contribution.id)
-    return render_template('admin/index.html',
-                           contributions=contributions)
+    return redirect(url_for('contribution_new'))
 
 
 @app.route('/admin/contribution/new', methods=['GET', 'POST'])
@@ -27,7 +25,9 @@ def contribution_new():
     if request.method == 'GET':
         return render_template('admin/contribution_form.html',
                                endpoint=url_for('contribution_new'),
-                               map_countries=model.COUNTRIES)
+                               map_countries=model.COUNTRIES,
+                               contributions=model.Contribution.select().order_by(model.Contribution.id)
+                               )
 
     contribution = model.Contribution(
         title=request.form.get('title'),
@@ -49,7 +49,9 @@ def contribution_edit(contr_id):
         return render_template('admin/contribution_form.html',
                                endpoint=url_for('contribution_edit', contr_id=contr_id),
                                map_countries=model.COUNTRIES,
-                               contribution=contribution)
+                               contribution=contribution,
+                               contributions=model.Contribution.select().order_by(model.Contribution.id)
+                               )
     for attrib in request.form:
         setattr(contribution, attrib, request.form.get(attrib))
     contribution.save()

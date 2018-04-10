@@ -8,7 +8,7 @@ $(document).ready(function(){
 		var country = $(this).attr('id');
 		var flag = '../static/imgs/'+ country +'.jpg';
 
-		$(this).prepend($('<img/>', {src:flag})).addClass('flags');
+		$(this).prepend($('<img/>', {src:flag}).addClass('flags'));
 		
 	});
 	

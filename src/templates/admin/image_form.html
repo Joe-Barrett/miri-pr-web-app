@@ -4,6 +4,8 @@
     {% else %}
     <input class="upload" type="file" name="file" class="file">
     {% endif %}
+    <label>Title</label>
+    <input type="text" name="title"{% if image %} value="{{image.title}}"{% endif %}>
     <button type="submit">Submit</button>
 </form>
 {% if image and image.id %}
