@@ -35,10 +35,10 @@
 	</button>
 		
   <button class="btn btn-primary contr" type="button" data-toggle="collapse" data-target="#collapseExample" data-parent="#MainMenu" aria-expanded="false" aria-controls="collapseExample">
-    <i class="fas fa-file"></i> Contributors
+    <i class="fas fa-file"></i> Contributions
   </button>
 	<div class="collapse" id="collapseExample">
-  	<div class="contributors">
+  	<div class="contributions">
     	{% for contr in contributions %}
 				<p><a href="{{ url_for('contribution_edit', contr_id=contr.id) }}">{{ contr.contributor }} - {{ contr.title }}</a></p>
 			{% endfor %}
