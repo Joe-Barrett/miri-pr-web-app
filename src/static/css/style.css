@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 /* Frontend */
 
 #wrapper {
@@ -35,8 +38,7 @@ path:hover {
 /* Logo*/
 
 .logo h1 {
-	font-family: "Raleway";
-	font-style: 600;
+	font-family: normal normal 700 28px/70px Century Gothic, sans-serif;
 }
 
 .logo span {
@@ -54,7 +56,7 @@ path:hover {
 
 .logo {
 	height: 70px;
-	font: normal normal 700 28px/70px Century Gothic, sans-serif;
+	font-family: normal normal 700 28px/70px Century Gothic, sans-serif;
 	overflow: hidden;
 	width: 155px;
 	background-color: #34495E;
@@ -66,7 +68,7 @@ path:hover {
 }
 
 .logo:hover .logo-span {
-	margin-top: -2.2em;
+	margin-top: -4.2em;
 }
 
 /* Responsive Logo*/
@@ -142,8 +144,7 @@ section {
 .contribution {
 	display: inline-block;
 	margin: 2% 0 2% 0;
-	border: solid 1px #FFFFFF;
-	background-color: #FFFFFF;
+	background-color: rgba(255,255,255,0.5);
 }
 
 #contributions h4 {
@@ -193,7 +194,8 @@ p.location {
 /* Carousel */
 
 .carousel {
-	display: inline-block
+	display: inline-block;
+	height: auto;
 }
 
 .carousel-inner img {
