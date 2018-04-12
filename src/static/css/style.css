@@ -3,6 +3,10 @@
 
 /* Frontend */
 
+body{ 
+ margin: 0;
+}
+
 #wrapper {
 	margin: 0;
 	height: 100vh;
@@ -13,13 +17,13 @@
 
 /* Interactive Map */
 
-.col-md-8.main {
+.col-md-7.main {
 	padding: 0;
 }
 
 svg {
-	width: 90vw;
-	height: 90vh;
+width: 92vw;
+height: 95vh;
 }
 
 path {
@@ -48,6 +52,10 @@ path:hover {
 	display: block;
 }
 
+.home{
+	cursor: pointer;
+}
+
 .logo,
 .logo-span {
 	transition: 0.3s;
@@ -71,19 +79,19 @@ path:hover {
 	margin-top: -4.2em;
 }
 
-/* Responsive Logo*/
+	/* Responsive Logo*/
 
-@media only screen and (max-width:991px) {
-	.logo {
-		width: 112%;
+	@media only screen and (max-width:991px) {
+		.logo {
+			width: 112%;
+		}
 	}
-}
 
-/* ----------- */
+	/* ----------- */
 
 /* contributions Sidebar */
 
-.col-md-4.sidebar {
+.col-md-5.sidebar {
 	background-color: rgba(255, 255, 255, 0.6);
 	position: absolute;
 	top: 0;
@@ -108,11 +116,11 @@ path:hover {
 
 /* Sidebar Header */
 
-.svg-inline--fa.fa-arrow-circle-left {
-	font-size: 30px;
-	width: 10%;
-	margin-top: 5%;
-	float: left;
+#button{
+		font-size: 30px;
+		width: 10%;
+    margin-top: 3vh;
+    float: left;
 }
 
 .svg-inline--fa.fa-arrow-circle-left path {
@@ -122,10 +130,9 @@ path:hover {
 .container h3 {
 	text-align: center;
 	font-weight: bold;
-	width: 80%;
+	width: 90%;
 	float: left;
-	padding-top: 10px;
-	margin-bottom: 5%;
+  margin: 4vh 0 3vh;
 }
 
 .sidebar hr {
@@ -156,21 +163,21 @@ section {
 #contributions h5,
 p.location {
 	text-align: center;
-	width: 75%;
+	width: 78%;
 	float: left;
-	margin-left: 2%;
+	margin: 0 1%;
 }
 
 .flag img {
-	height: 20%;
 	width: 20%;
 	float: left;
+	cursor: pointer;
 }
 
 .description {
 	float: left;
 	text-align: justify;
-	margin: 2% !important;
+	margin: 5% !important;
 	box-shadow: none !important;
 }
 
@@ -196,18 +203,24 @@ p.location {
 .carousel {
 	display: inline-block;
 	height: auto;
+	width: 100%;
+	margin-top: 5%;
 }
 
-.carousel-inner img {
-	margin: auto;
+.carousel-inner > .item > img{
+margin:auto;
 }
 
 .carousel-caption {
 	width: 100%;
+	height: 35px;
 	padding: 10px 0 10px 0 !important;
-	background-color: #0000008c;
-	left: 0 !important;
+	background-color: rgba(52,73,94,0.6) !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
 	bottom: 0 !important;
+
 }
 
 .carousel-caption h4 {
@@ -231,12 +244,10 @@ p.location {
 /* Responsive contributions Sidebar */
 
 @media only screen and (max-width:991px) {
-	.col-md-4.sidebar {
+	.col-md-5.sidebar {
 		top: 70px;
 	}
-	.col-md-4.sidebar #button {
-		display: none;
-	}
+	
 }
 
 /* Backend Admin */
@@ -301,41 +312,46 @@ svg.svg-inline--fa {
 	color: #FFFFFF;
 }
 
-/* Responsive Admin Sidebar*/
+	/* Responsive Admin Sidebar*/
 
-@media only screen and (max-width:991px) {
-	.col-md-4.side {
-		padding-bottom: 2%;
-		height: auto;
+	@media only screen and (max-width:991px) {
+		.col-md-3.side {
+			padding-bottom: 6%;
+			height: auto !important;
+		}
+		.btn-primary.resp {
+			display: block;
+			width: 10%;
+			float: left;
+		}
+		.btn-primary.desk {
+			display: none;
+		}
+		.sideHeader h3 {
+			width: 90%;
+			margin-top: 0;
+			padding-top: 2%;
+		}
+		.btn-primary.contr,
+		.btn-primary.add_contr {
+			width: 50%;
+			float: left;
+			text-align: center;
+			border-radius: 0;
+		}
+		
+		.btn-primary.contr{
+			border-right: soild 1px #EEEEEE;
+		}
 	}
-	.btn-primary.resp {
-		display: block;
-		width: 10%;
-		float: left;
-	}
-	.btn-primary.desk {
-		display: none;
-	}
-	.sideHeader h3 {
-		width: 90%;
-		margin-top: 0;
-		padding-top: 2%;
-	}
-	.btn-primary.contr,
-	.btn-primary.add_contr {
-		width: 50%;
-		float: left;
-		text-align: center;
-	}
-}
 
-/* ----------- */
+	/* ----------- */
 
-/* ---------- */
+
 
 /* Admin Main Body */
 
-.col-md-8.mainbody {
+.col-md-9.mainbody {
 	height: 100vh;
 	overflow: scroll;
 	background-color: #EEEEEE;
@@ -441,20 +457,16 @@ form.delImg {
 
 /* ---------- */
 
-/* --------- */
 
-/* Responsive Admin Main Body*/
+	/* Responsive Admin Main Body*/
 
-@media only screen and (max-width:991px) {
-	.col-md-4.mainbody {
-		height: auto;
+	@media only screen and (max-width:991px) {
+		.mainbody h3 {
+			margin-top: 0;
+			padding-top: 2%;
+		}
 	}
-	.mainbody h3 {
-		margin-top: 0;
-		padding-top: 2%;
-	}
-}
 
-/* ----------- */
+	/* ----------- */
 
 /* ---------- */
