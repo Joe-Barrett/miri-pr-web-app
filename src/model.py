@@ -75,5 +75,6 @@ COUNTRIES = [
     'Ukraine',
     'United Kingdom (UK)',
     'Vatican City (Holy See)',
-		'USA'
+		'USA',
+		'Various Locations'
 ]
