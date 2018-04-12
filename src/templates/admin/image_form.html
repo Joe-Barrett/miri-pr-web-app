@@ -7,11 +7,9 @@
     <label>Title</label>
     <input type="text" name="title"{% if image %} value="{{image.title}}"{% endif %}>
     <button type="submit">Submit</button>
+		{% if image and image.id %}
+		<button type="submit" value="{{ url_for('image_delete', img_id=image.id) }}">Delete</button>
+		{% endif %}
 </form>
-{% if image and image.id %}
-<form class="delImg" action="{{ url_for('image_delete', img_id=image.id) }}" method="POST">
-    <button type="submit">Delete</button>
-</form>
-{% endif %}
-<hr>
+
 	

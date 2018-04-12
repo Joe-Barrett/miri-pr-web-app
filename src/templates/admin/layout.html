@@ -18,7 +18,7 @@
 
 <body>
 
-<div class="col-md-4 side">
+<div class="col-md-3 side">
 	<button class="btn btn-primary resp">
 		<a href="{{ url_for('index') }}"><i class="fas fa-home"></i> MIRI Site</a>	
 	</button>
@@ -44,7 +44,6 @@
 			{% endfor %}
   	</div>
 	</div>
-	
 	<button class="btn btn-primary add_contr">
 		<a href="{{ url_for('contribution_new') }}"><i class="fas fa-plus"></i> Add New Contributor</a>   
 	</button>
@@ -53,7 +52,7 @@
 	<!-- SideBar Menu Ends-->
 </div>
 	
-<div class="col-md-8 mainbody">	
+<div class="col-md-9 mainbody">	
 {% block body %}
 
 {% endblock %}
