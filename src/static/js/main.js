@@ -22,6 +22,15 @@ $(document).ready(function () {
 			fill: "34495E"
 		});
 	});
+	
+	
+	$('.home').click(function () {
+		$('#contributions .contribution').show();
+		$('#contributions .details').hide();
+		$('.countryImage').css({
+			fill: "FFFFFF"
+		});
+	});
 
 	$('#button').click(function () {
 		$('#contributions .contribution').show();
