@@ -168,8 +168,9 @@ section {
 #contributions h5,
 p.location {
 	text-align: center;
-	width: 70%;
+	width: 75%;
 	float: left;
+	cursor: pointer;
 }
 
 .flag img {
@@ -309,7 +310,8 @@ hr {
 
 .contributions a {
 	color: #FFFFFF;
-	margin: 5%;
+	margin-left: 5%;
+	display: inline-block;
 	text-decoration: none;
 	line-height: 25px;
 }
@@ -319,12 +321,18 @@ svg.svg-inline--fa {
 	color: #FFFFFF;
 }
 
+.col-xs-6{
+	width: 100%;
+	padding: 0;
+		}
+
 	/* Responsive Admin Sidebar*/
 
 	@media only screen and (max-width:991px) {
 		
 		.col-md-3.side {
 			height: 18vh !important;
+			padding: 0;
 		}
 		
 		.btn-primary.resp {
@@ -346,7 +354,7 @@ svg.svg-inline--fa {
 		
 		.btn-primary.contr,
 		.btn-primary.add_contr {
-			width: 50%;
+			width: 100%;
 			float: left;
 			text-align: center;
 			border-radius: 0;
@@ -356,11 +364,23 @@ svg.svg-inline--fa {
 			border-right: #EEEEEE solid 1px;
 		}
 		
+		.collapse.in{
+			width: 200%;
+			background-color: #34495E;
+		}
+
+		.col-xs-6{
+			width: 50%;
+		}
+		
+		.contributions{
+			padding-top: 5%;
+    	padding-bottom: 1%;
+		}
+		
 	}
 
 	/* ----------- */
-
-
 
 /* Admin Main Body */
 
@@ -372,6 +392,7 @@ svg.svg-inline--fa {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300 !important;
 	padding-bottom: 2%;
+	float: left;
 }
 
 .main h3 {
