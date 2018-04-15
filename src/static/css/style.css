@@ -21,6 +21,10 @@ body{
 	padding: 0;
 }
 
+#map{
+	width: 100%;
+}
+
 svg {
 width: 92vw;
 height: 95vh;
@@ -101,11 +105,6 @@ path:hover {
 	overflow: scroll;
 }
 
-.wrap {
-	min-height: 100%;
-	position: relative;
-}
-
 .container {
 	height: 100%;
 	width: 100% !important;
@@ -130,7 +129,7 @@ path:hover {
 .container h3 {
 	text-align: center;
 	font-weight: bold;
-	width: 90%;
+	width: 85%;
 	float: left;
   margin: 4vh 0 3vh;
 }
@@ -157,19 +156,24 @@ section {
 #contributions h4 {
 	margin-bottom: 0%;
 	padding-top: 2%;
+	margin: 2% 0;
+}
+
+#contributions h5{
+	margin: 1% 0 0 0;
+	font-size: 16px;
 }
 
 #contributions h4,
 #contributions h5,
 p.location {
 	text-align: center;
-	width: 78%;
+	width: 70%;
 	float: left;
-	margin: 0 1%;
 }
 
 .flag img {
-	width: 20%;
+	width: 25%;
 	float: left;
 	cursor: pointer;
 }
@@ -179,6 +183,7 @@ p.location {
 	text-align: justify;
 	margin: 5% !important;
 	box-shadow: none !important;
+	font-size: 16px;
 }
 
 .svg-inline--fa.fa-angle-left,
@@ -208,7 +213,7 @@ p.location {
 }
 
 .carousel-inner > .item > img{
-margin:auto;
+margin: auto;
 }
 
 .carousel-caption {
@@ -226,7 +231,7 @@ margin:auto;
 .carousel-caption h4 {
 	color: #FFFFFF;
 	width: 100% !important;
-	margin: 0;
+	margin: 0 !important;
 	padding: 0 !important;
 	text-shadow: none;
 }
@@ -241,14 +246,16 @@ margin:auto;
 
 /* ---------- */
 
-/* Responsive contributions Sidebar */
+	/* Responsive contributions Sidebar */
 
-@media only screen and (max-width:991px) {
-	.col-md-5.sidebar {
-		top: 70px;
+	@media only screen and (max-width:991px) {
+		.col-md-5.sidebar {
+			top: 70px;
+		}
+
 	}
-	
-}
+
+	/* ---------- */
 
 /* Backend Admin */
 
@@ -315,23 +322,28 @@ svg.svg-inline--fa {
 	/* Responsive Admin Sidebar*/
 
 	@media only screen and (max-width:991px) {
+		
 		.col-md-3.side {
-			padding-bottom: 6%;
-			height: auto !important;
+			height: 18vh !important;
 		}
+		
 		.btn-primary.resp {
 			display: block;
 			width: 10%;
 			float: left;
+			margin: 1% 0;
 		}
+		
 		.btn-primary.desk {
 			display: none;
 		}
+		
 		.sideHeader h3 {
 			width: 90%;
 			margin-top: 0;
 			padding-top: 2%;
 		}
+		
 		.btn-primary.contr,
 		.btn-primary.add_contr {
 			width: 50%;
@@ -341,8 +353,9 @@ svg.svg-inline--fa {
 		}
 		
 		.btn-primary.contr{
-			border-right: soild 1px #EEEEEE;
+			border-right: #EEEEEE solid 1px;
 		}
+		
 	}
 
 	/* ----------- */
