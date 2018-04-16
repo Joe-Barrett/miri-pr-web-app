@@ -27,7 +27,7 @@ def admin():
 def admin_login():
 	if request.form['password'] == 'password' and request.form['username'] == 'admin':
 		session['logged_in'] = True
-		return contribution_new()
+		return redirect(url_for('contribution_new'))
 	else:
 		flash('Password Incorrect. Please try again.')
 	return admin()
