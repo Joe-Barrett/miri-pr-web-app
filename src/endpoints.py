@@ -1,8 +1,8 @@
 import io
 from main import app
-from flask import render_template, request, url_for, redirect, send_file, send_from_directory
+from flask import Flask, render_template, request, url_for, redirect, send_file, send_from_directory, flash, session
 import model
-
+import os
 
 @app.route('/')
 def index():
@@ -15,30 +15,49 @@ def asset(path):
     return send_from_directory('static', path)
 
 
-@app.route('/admin', methods=['GET'])
+@app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    return redirect(url_for('contribution_new'))
+	if not session.get('logged_in'):
+		return render_template('admin/admin_login.html')
+	else:
+		return redirect(url_for('contribution_new'))
 
+	
+@app.route('/admin/admin_login',methods=['GET', 'POST'])
+def admin_login():
+	if request.form['password'] == 'password' and request.form['username'] == 'admin':
+		session['logged_in'] = True
+		return contribution_new()
+	else:
+		flash('Password Incorrect. Please try again.')
+	return admin()
+
+
+@app.route('/logout')
+def logout():
+	session['logged_in'] = False
+	return admin()
+	
 
 @app.route('/admin/contribution/new', methods=['GET', 'POST'])
 def contribution_new():
-    if request.method == 'GET':
-        return render_template('admin/contribution_form.html',
-                               endpoint=url_for('contribution_new'),
-                               map_countries=model.COUNTRIES,
-                               contributions=model.Contribution.select().order_by(model.Contribution.id)
-                               )
+	if request.method == 'GET':
+		return render_template('admin/contribution_form.html',
+							   endpoint=url_for('contribution_new'),
+							   map_countries=model.COUNTRIES,
+							   contributions=model.Contribution.select().order_by(model.Contribution.id)
+							   )
 
-    contribution = model.Contribution(
-        title=request.form.get('title'),
-        description=request.form.get('description'),
-        map_location=request.form.get('map_location'),
-        shown_location=request.form.get('shown_location'),
-        contributor=request.form.get('contributor'),
-    )
-    contribution.save()
+	contribution = model.Contribution(
+		title=request.form.get('title'),
+		description=request.form.get('description'),
+		map_location=request.form.get('map_location'),
+		shown_location=request.form.get('shown_location'),
+		contributor=request.form.get('contributor'),
+	)
+	contribution.save()
 
-    return redirect(url_for('contribution_edit', contr_id=contribution.id))
+	return redirect(url_for('contribution_edit', contr_id=contribution.id))
 
 
 @app.route('/admin/contribution/<contr_id>', methods=['GET', 'POST'])
@@ -107,3 +126,4 @@ def image_delete(img_id):
     model.Image.delete_by_id(img_id)
 
     return redirect(url_for('contribution_edit', contr_id=contribution.id))
+
