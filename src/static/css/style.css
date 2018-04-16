@@ -173,6 +173,10 @@ p.location {
 	cursor: pointer;
 }
 
+p.location{
+	padding-top: 2%;
+}
+
 .flag img {
 	width: 25%;
 	float: left;
@@ -242,7 +246,7 @@ margin: auto;
 	background-color: rgba(255, 255, 255, 0.2) !important;
 	background-image: none !important;
 	opacity: 1 !important;
-	width: 10% !important;
+	width: 5% !important;
 }
 
 /* ---------- */
