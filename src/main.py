@@ -1,8 +1,10 @@
 from flask import Flask
 from peewee import PostgresqlDatabase
+import os
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
+app.secret_key = os.urandom(24)
 db = PostgresqlDatabase(user=app.config['POSTGRES_USER'],
                         password=app.config['POSTGRES_PASSWORD'],
                         port=app.config['POSTGRES_PORT'],
