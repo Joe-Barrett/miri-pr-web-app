@@ -9,6 +9,10 @@ class BaseModel(Model):
     class Meta:
         database = db
 
+		
+class Users(BaseModel):
+	name = CharField()
+	pw = CharField()
 
 class Contribution(BaseModel):
     map_location = CharField(null=True)
@@ -21,7 +25,7 @@ class Image(BaseModel):
     file = BlobField()
     mimetype = CharField()
     contribution = ForeignKeyField(Contribution, backref='images', on_delete='CASCADE')
-
+	
 
 COUNTRIES = [
     'Albania',
