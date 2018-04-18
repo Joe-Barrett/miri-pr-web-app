@@ -3,6 +3,7 @@ from main import app
 from flask import Flask, render_template, request, url_for, redirect, send_file, send_from_directory, flash, session
 import model
 import os
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route('/')
 def index():
@@ -25,11 +26,15 @@ def admin():
 	
 @app.route('/admin/admin_login',methods=['GET', 'POST'])
 def admin_login():
-	if request.form['password'] == 'password' and request.form['username'] == 'admin':
+	username = request.form['username']
+	password = request.form['password']
+	uExists = model.Users.get_or_none(model.Users.name==(username))
+		
+	if uExists and check_password_hash(model.Users.get(model.Users.name==username).pw, password):
 		session['logged_in'] = True
 		return redirect(url_for('contribution_new'))
 	else:
-		flash('Password Incorrect. Please try again.')
+		flash('Username or password incorrect. Please try again.')
 	return admin()
 
 
