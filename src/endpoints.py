@@ -18,6 +18,11 @@ def asset(path):
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
+	# If there are no users, create one with a blank password
+	query = model.Users.select().where(model.Users.title=='admin')
+	if not query:
+		model.Users.create(title='admin', name='admin', pw=generate_password_hash(''))
+		
 	if not session.get('logged_in'):
 		return render_template('admin/admin_login.html')
 	else:
@@ -28,10 +33,10 @@ def admin():
 def admin_login():
 	username = request.form['username']
 	password = request.form['password']
-	uExists = model.Users.get_or_none(model.Users.name==(username))
+	userExists = model.Users.get_or_none(model.Users.name==(username))
 		
-	if uExists and check_password_hash(model.Users.get(model.Users.name==username).pw, password):
-		session['logged_in'] = True
+	if userExists and check_password_hash(model.Users.get(model.Users.name==username).pw, password):
+		session['logged_in'] = (True,model.Users.get(model.Users.name==username).id)
 		return redirect(url_for('contribution_new'))
 	else:
 		flash('Username or password incorrect. Please try again.')
@@ -41,6 +46,33 @@ def admin_login():
 @app.route('/logout')
 def logout():
 	session['logged_in'] = False
+	return redirect(url_for('admin'))
+	
+@app.route('/admin/password', methods=['GET', 'POST'])
+def change_password():
+	if session.get('logged_in'):
+	
+		if request.method == 'POST':
+			oldPass = request.form['oldPass']
+			newPass = request.form['newPass']
+			newPassCheck = request.form['newPassCheck']
+			identical = newPass == newPassCheck
+			userId = session['logged_in'][1]
+			
+			if identical and len(request.form['newPass']) >= 1:
+				if check_password_hash(model.Users.get(model.Users.id==userId).pw, oldPass):
+					query = model.Users.update(pw=generate_password_hash(newPass)).where(model.Users.id == userId)
+					query.execute()
+					return logout()
+				else:
+					flash('Old password incorrect')
+					return redirect(url_for('change_password'))
+			else:
+				flash('New password must be entered twice')
+				return redirect(url_for('change_password'))
+				
+		return render_template('admin/change_password.html')
+		
 	return redirect(url_for('admin'))
 	
 
