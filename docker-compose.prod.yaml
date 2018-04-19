@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  app:
+    build:
+      context: src/
+    ports:
+     - '80:8000'
+    environment:
+      FLASK_DEBUG: 'True'
+    command: gunicorn -w 1 -b 0.0.0.0:8000 main:app
+    volumes:
+      - ./src:/app
+  postgres:
+    image: 'postgres:10-alpine'
+    ports:
+     - '5432:5432'
+    environment:
+      POSTGRES_DB: miri
+      POSTGRES_USER: miri
+      POSTGRES_PASSWORD: changeme
+    volumes:
+      - ./data:/var/lib/postgresql/data
