@@ -43,6 +43,16 @@ path:hover {
 
 /* ---------- */
 
+	/* Responsive Interactive Map */
+
+	@media only screen and (max-width:991px) {
+		svg{
+			width: 130vw;
+		}
+	}
+	
+	/* ---------- */
+
 /* Logo*/
 
 .logo h1 {
@@ -87,7 +97,7 @@ path:hover {
 
 	@media only screen and (max-width:991px) {
 		.logo {
-			width: 112%;
+			width: 100vw;
 		}
 	}
 
@@ -243,13 +253,11 @@ margin: auto;
 
 .carousel-control {
 	color: #34495E !important;
-	background-color: rgba(255, 255, 255, 0.2) !important;
+	background-color: none !important;
 	background-image: none !important;
 	opacity: 1 !important;
-	width: 5% !important;
+	width: 10% !important;
 }
-
-
 
 /* ---------- */
 
@@ -358,30 +366,49 @@ svg.svg-inline--fa {
 			padding-top: 2%;
 		}
 		
+		.col-xs-6.contr{
+			width: 100%;
+		}
+		
+		.col-xs-6{
+			width: 33.33%;
+		}
+		
 		.btn-primary.contr,
-		.btn-primary.add_contr {
+		.btn-primary.add_contr,
+		.btn-primary.password,
+		.btn-primary.logout{
 			width: 100%;
 			float: left;
 			text-align: center;
 			border-radius: 0;
 		}
 		
-		.btn-primary.contr{
+		.btn-primary.add_contr,
+		.btn-primary.password{
 			border-right: #EEEEEE solid 1px;
 		}
 		
 		.collapse.in{
-			width: 200%;
+			width: 100%;
 			background-color: #34495E;
-		}
-
-		.col-xs-6{
-			width: 50%;
 		}
 		
 		.contributions{
 			padding-top: 5%;
     	padding-bottom: 1%;
+		}
+		
+	}
+
+	@media only screen and (max-width: 510px) {
+		.col-xs-6{
+			width: 100%;
+		}
+		
+		.btn-primary.add_contr,
+		.btn-primary.password{
+			border-right: none;
 		}
 		
 	}
