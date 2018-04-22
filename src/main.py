@@ -26,12 +26,3 @@ def initdb():
     db.create_tables([Contribution, Image, Users])
     db.close()
     print('Done!')
-
-@app.before_request
-def before_request():
-    db.connect(reuse_if_open=True)
-
-@app.after_request
-def after_request(response):
-    db.close()
-    return response

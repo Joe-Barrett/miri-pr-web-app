@@ -71,7 +71,9 @@ def change_password():
 				flash('New password must be entered twice')
 				return redirect(url_for('change_password'))
 				
-		return render_template('admin/change_password.html')
+		return render_template('admin/change_password.html',
+								   contributions=model.Contribution.select().order_by(model.Contribution.id)
+			)
 		
 	return redirect(url_for('admin'))
 	
