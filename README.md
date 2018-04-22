@@ -44,11 +44,12 @@ After the first time, only step 2. is required.
 ## Setup for production
 
 1. Ensure docker is installed on the system.
+2. [Ensure docker-compose is installed on the system.](https://docs.docker.com/compose/install/#install-compose) 
 2. Copy `src/config.py.dist` to `src/config.py` and change the postgresql password
 3. Change the postgresql password in `docker-compose.prod.yaml` to the same value as step 2.
 4. In the root of the repository run:
 ```
-docker-compose -f docker-compose.prod.yaml start
+docker-compose -f docker-compose.prod.yaml up -d
 ```
 5. In the same repository run:
 ```
