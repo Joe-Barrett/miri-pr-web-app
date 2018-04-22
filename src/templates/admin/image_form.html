@@ -1,0 +1,17 @@
+{% if image and image.id %}
+<form class="delImg" id="delete-{{image.id}}" action="{{ url_for('image_delete', img_id=image.id) }}" method="POST">
+</form>
+{% endif %}
+<form class="addImg" action="{{ endpoint }}" method="POST" enctype="multipart/form-data">
+    {% if image and image.id %}
+    <img src="{{ url_for('image', img_id=image.id) }}">
+    {% else %}
+    <input class="upload" type="file" name="file" class="file">
+    {% endif %}
+    <label>Title</label>
+    <input type="text" name="title"{% if image %} value="{{image.title}}"{% endif %}>
+    <button type="submit">Submit</button>
+    {% if image and image.id %}
+        <button type="submit" form="delete-{{image.id}}">Delete</button>
+    {% endif %}
+</form>

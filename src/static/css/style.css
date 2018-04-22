@@ -1,0 +1,539 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* Frontend */
+
+body{ 
+ margin: 0;
+}
+
+#wrapper {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	overflow: hidden;
+	background-color: #7FC8ED;
+}
+
+/* Interactive Map */
+
+.col-md-7.main {
+	padding: 0;
+}
+
+#map{
+	width: 100%;
+}
+
+svg {
+width: 92vw;
+height: 95vh;
+}
+
+path {
+	fill: #FFFFFF;
+	cursor: pointer;
+	stroke: grey;
+	stroke-width: 0.1;
+}
+
+path:hover {
+	fill: #34495E;
+}
+
+/* ---------- */
+
+	/* Responsive Interactive Map */
+
+	@media only screen and (max-width:991px) {
+		svg{
+			width: 130vw;
+		}
+	}
+	
+	/* ---------- */
+
+/* Logo*/
+
+.logo h1 {
+	font-family: normal normal 700 28px/70px Century Gothic, sans-serif;
+}
+
+.logo span {
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+
+.home{
+	cursor: pointer;
+}
+
+.logo,
+.logo-span {
+	transition: 0.3s;
+	z-index: 100;
+}
+
+.logo {
+	height: 70px;
+	font-family: normal normal 700 28px/70px Century Gothic, sans-serif;
+	overflow: hidden;
+	width: 155px;
+	background-color: #34495E;
+	opacity: 0.9;
+}
+
+.logo-span {
+	margin-top: 0em;
+}
+
+.logo:hover .logo-span {
+	margin-top: -4.2em;
+}
+
+	/* Responsive Logo*/
+
+	@media only screen and (max-width:991px) {
+		.logo {
+			width: 100vw;
+		}
+	}
+
+	/* ----------- */
+
+/* contributions Sidebar */
+
+.col-md-5.sidebar {
+	background-color: rgba(255, 255, 255, 0.6);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: auto;
+	overflow: scroll;
+}
+
+.container {
+	height: 100%;
+	width: 100% !important;
+	color: #000000;
+	font-family: 'Raleway';
+	padding: 0;
+}
+
+/* Sidebar Header */
+
+#button{
+		font-size: 30px;
+		width: 10%;
+    margin-top: 3vh;
+    float: left;
+}
+
+.svg-inline--fa.fa-arrow-circle-left path {
+	fill: #000000;
+}
+
+.container h3 {
+	text-align: center;
+	font-weight: bold;
+	width: 85%;
+	float: left;
+  margin: 4vh 0 3vh;
+}
+
+.sidebar hr {
+	border-top: 1px solid #000000 !important;
+	width: 100%;
+}
+
+/* ---------- */
+
+/* contributions Information */
+
+section {
+	height: auto;
+}
+
+.contribution {
+	display: inline-block;
+	margin: 2% 0 2% 0;
+	background-color: rgba(255,255,255,0.5);
+}
+
+#contributions h4 {
+	margin-bottom: 0%;
+	padding-top: 2%;
+	margin: 2% 0;
+}
+
+#contributions h5{
+	margin: 1% 0 0 0;
+	font-size: 16px;
+}
+
+#contributions h4,
+#contributions h5,
+p.location {
+	text-align: center;
+	width: 75%;
+	float: left;
+	cursor: pointer;
+}
+
+p.location{
+	padding-top: 2%;
+}
+
+.flag img {
+	width: 25%;
+	float: left;
+	cursor: pointer;
+}
+
+.description {
+	float: left;
+	text-align: justify;
+	margin: 5% !important;
+	box-shadow: none !important;
+	font-size: 16px;
+}
+
+.svg-inline--fa.fa-angle-left,
+.svg-inline--fa.fa-angle-right {
+	font-size: 30px;
+}
+
+.svg-inline--fa.fa-angle-left path,
+.svg-inline--fa.fa-angle-right path {
+	fill: #000000;
+}
+
+.parts img {
+	margin: 0;
+	display: none;
+}
+
+/* ---------- */
+
+/* Carousel */
+
+.carousel {
+	display: inline-block;
+	height: auto;
+	width: 100%;
+	margin-top: 5%;
+}
+
+.carousel-inner > .item > img{
+margin: auto;
+}
+
+.carousel-caption {
+	width: 100%;
+	height: 35px;
+	padding: 10px 0 10px 0 !important;
+	background-color: rgba(52,73,94,0.6) !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+	bottom: 0 !important;
+
+}
+
+.carousel-caption h4 {
+	color: #FFFFFF;
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-shadow: none;
+}
+
+.carousel-control {
+	color: #34495E !important;
+	background-color: none !important;
+	background-image: none !important;
+	opacity: 1 !important;
+	width: 10% !important;
+}
+
+/* ---------- */
+
+	/* Responsive contributions Sidebar */
+
+	@media only screen and (max-width:991px) {
+		.col-md-5.sidebar {
+			top: 70px;
+		}
+
+	}
+
+	/* ---------- */
+
+/* Backend Admin */
+
+/* Admin Sidebar */
+
+.side {
+	height: 100vh !important;
+	background-color: #34495E !important;
+	color: #FFFFFF !important;
+}
+
+.sideHeader h3,
+.sideHeader p {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+}
+
+hr {
+	border-width: 1px !important;
+	border-color: #EEEEEE !important;
+}
+
+.sideHeader h3 {
+	font-weight: bold;
+}
+
+.btn-primary.resp {
+	display: none;
+}
+
+.btn-primary a,
+.btn-primary,
+.btn-primary:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	width: 100%;
+	text-align: left;
+	background-color: #34495E;
+	border: none;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+	background-color: #34495E;
+	border: none;
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.contributions a {
+	color: #FFFFFF;
+	margin-left: 5%;
+	display: inline-block;
+	text-decoration: none;
+	line-height: 25px;
+}
+
+svg.svg-inline--fa {
+	margin-right: 1%;
+	color: #FFFFFF;
+}
+
+.col-xs-6{
+	width: 100%;
+	padding: 0;
+		}
+
+	/* Responsive Admin Sidebar*/
+
+	@media only screen and (max-width:991px) {
+		
+		.col-md-3.side {
+			height: 18vh !important;
+			padding: 0;
+		}
+		
+		.btn-primary.resp {
+			display: block;
+			width: 10%;
+			float: left;
+			margin: 1% 0;
+		}
+		
+		.btn-primary.desk {
+			display: none;
+		}
+		
+		.sideHeader h3 {
+			width: 90%;
+			margin-top: 0;
+			padding-top: 2%;
+		}
+		
+		.col-xs-6.contr{
+			width: 100%;
+		}
+		
+		.col-xs-6{
+			width: 33.33%;
+		}
+		
+		.btn-primary.contr,
+		.btn-primary.add_contr,
+		.btn-primary.password,
+		.btn-primary.logout{
+			width: 100%;
+			float: left;
+			text-align: center;
+			border-radius: 0;
+		}
+		
+		.btn-primary.add_contr,
+		.btn-primary.password{
+			border-right: #EEEEEE solid 1px;
+		}
+		
+		.collapse.in{
+			width: 100%;
+			background-color: #34495E;
+		}
+		
+		.contributions{
+			padding-top: 5%;
+    	padding-bottom: 1%;
+		}
+		
+	}
+
+	@media only screen and (max-width: 510px) {
+		.col-xs-6{
+			width: 100%;
+		}
+		
+		.btn-primary.add_contr,
+		.btn-primary.password{
+			border-right: none;
+		}
+		
+	}
+
+	/* ----------- */
+
+/* Admin Main Body */
+
+.col-md-9.mainbody {
+	height: 100vh;
+	overflow: scroll;
+	background-color: #EEEEEE;
+	color: #1A1A1A;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300 !important;
+	padding-bottom: 2%;
+	float: left;
+}
+
+.main h3 {
+	margin-left: 5%;
+	font-weight: 600;
+}
+
+/* Add Contributor */
+
+.main form {
+	margin: 5%;
+}
+
+.mainbody label,
+.mainbody input,
+.mainbody textarea,
+.mainbody select {
+	width: 100%;
+	font-weight: 300 !important;
+}
+
+.mainbody input,
+.mainbody select {
+	margin-bottom: 2%;
+}
+
+.mainbody textarea {
+	margin-bottom: 1%;
+}
+
+.mainbody input,
+.mainbody select {
+	height: 30px;
+}
+
+.mainbody textarea {
+	height: 200px;
+}
+
+.mainbody button {
+	background-color: #34495E;
+	color: #FFFFFF;
+	width: 20%;
+	height: 30px;
+	float: left;
+}
+
+input.file {
+	padding-top: 1%;
+}
+
+/* ---------- */
+
+/* Add/Delete Img To Contributor */
+
+form.addImg {
+	width: 100%;
+	float: left;
+	margin-top: 2%;
+}
+
+.addImg img {
+	width: 25%;
+	float: left;
+}
+
+.addImg label {
+	width: auto;
+	padding-top: 0.5%;
+	margin: 0 1%;
+	float: left;
+}
+
+.addImg input {
+	width: 50%;
+	float: left;
+}
+
+input.upload {
+	width: 25%;
+}
+
+.addImg button {
+	margin-left: 5%;
+}
+
+form.delImg {
+	float: left;
+	width: 100%;
+	margin: 2%;
+}
+
+.delImg button {
+	margin-left: 28%;
+}
+
+/* ---------- */
+
+
+	/* Responsive Admin Main Body*/
+
+	@media only screen and (max-width:991px) {
+		.mainbody h3 {
+			margin-top: 0;
+			padding-top: 2%;
+		}
+	}
+
+	/* ----------- */
+
+/* ---------- */
