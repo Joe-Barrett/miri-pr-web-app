@@ -38,7 +38,7 @@ docker-compose up
 docker-compose run app flask initdb
 ```
 
-The server should be running on `http://localhost:8000`.
+The server should be running on `http://localhost:8000` and the admin interface should be accessible on `http://localhost:8000/admin`. The first time it is launched, the login information will be `admin` as username, and leaving the password empty. The password can be set/changed in the interface.
 After the first time, only step 2. is required.
 
 ## Setup for production
@@ -56,4 +56,4 @@ docker-compose -f docker-compose.prod.yaml up -d
 docker-compose run app flask initdb
 ```
 
-The server should be running on `http://localhost`.
+The server should be running on `http://localhost` and the admin interface should be accessible on `http://localhost/admin`. The first time it is launched, the login information will be `admin` as username, and leaving the password empty. The password can be set/changed in the interface.
